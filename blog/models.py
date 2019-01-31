@@ -13,14 +13,14 @@ class Post(models.Model):
         (PUBLISHED, 'Published'),
     )
 
-    title = models.CharField(max_length= 30)
+    title = models.CharField(max_length= 70)
     body = models.TextField()
     author = models.ForeignKey(User, related_name='blog_posts', on_delete=models.CASCADE)
     slug = models.SlugField(max_length= 250, unique_for_date='publish')
-    publish = models.DateTimeField(default= timezone.now())
+    publish = models.DateTimeField(default= timezone.now)
     created = models.DateTimeField(auto_now_add= True)
     updated = models.DateTimeField(auto_now= True)
-    status = models.CharField(max_length= 15, choices = BLOG_CHOICES, default= 'draft')
+    status = models.CharField(max_length= 15, choices = BLOG_CHOICES, default= DRAFT)
 
     class Meta:
         ordering = ('-publish', )
