@@ -1,0 +1,12 @@
+<div class="clearfix">
+      <span class="active">
+          page {{ page.number }} of {{ page.paginator.num_pages }}
+      </span>
+    {% if page.has_next %}
+        <a class="btn btn-primary float-right" href="?page={{ page.next_page_number }}">next</a>
+    {% endif %}
+
+    {% if page.has_previous %}
+            <a class="btn btn-primary float-left" href="?page={{ page.previous_page_number }}"> previous </a>
+        {% endif %}
+</div>

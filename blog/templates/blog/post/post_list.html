@@ -22,10 +22,9 @@
               On {{ post.publish }}</p>
 </div>
      {% endfor %}
+
+{% include "blog/post/pagination.html" with page=posts %}
+
 {% endblock %}
 
 <hr>
-<!-- Pager -->
-<div class="clearfix">
-    <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-</div>
